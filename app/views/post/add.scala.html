@@ -1,0 +1,14 @@
+@(postForm: Form[Post])
+
+@import helper._
+
+@main("") {
+	<h1>Create Form Goes Here</h1>
+
+	@form(action = routes.Application.addPost()) {
+		@inputText(postForm("title"))
+		@textarea(postForm("description"), 'rows -> 6, 'cols -> 75)
+    	<input type="submit" value="add"/>
+	}
+
+}
